@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package user;
+
+service UserService {
+  rpc Me (UserRequest) returns (UserResponse);
+}
+
+message UserRequest {
+}
+
+message UserResponse {
+  string time = 1;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package recipe;
+
+service RecipeService {
+  rpc Create (RecipeCreateRequest) returns (RecipeCreateResponse) {}
+}
+
+message RecipeCreateRequest {
+  string title = 1;
+  string ingredients = 2;
+  string instructions = 3;
+}
+
+message RecipeCreateResponse {
+  string title = 1;
+  string ingredients = 2;
+  string instructions = 3;
+  string time = 4;
+}
+
