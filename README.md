@@ -50,3 +50,5 @@ just put the .proto to postman
 - [ ] event driven can be consumer or producer 🤔
 - [ ] observability
 - [ ] worker_threads, hemmm 🤔
+- [ ] module alias on commonJS 😮
+- [ ] unit test 😮
