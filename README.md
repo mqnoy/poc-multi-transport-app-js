@@ -40,13 +40,13 @@ curl --location 'http://localhost:3000/api/recipes/'
 just put the .proto to postman
 
 ## TODO
-[x] auto completion with jsdoc ` /** @type {import('./ClassName')} */`
-[x] service locator 
-[x] async wrapper catch 🤔
-[x] multiple transport 
-[x] interceptor for grpc
-[ ] authentication, authorization, RBAC
-[ ] middleware
-[ ] event driven can be consumer or producer 🤔
-[ ] observability
-[ ] worker_threads, hemmm 🤔
+- [x] auto completion with jsdoc ` /** @type {import('./ClassName')} */`
+- [x] service locator 
+- [x] async wrapper catch 🤔
+- [x] multiple transport 
+- [x] interceptor for grpc
+- [ ] authentication, authorization, RBAC
+- [ ] middleware
+- [ ] event driven can be consumer or producer 🤔
+- [ ] observability
+- [ ] worker_threads, hemmm 🤔
