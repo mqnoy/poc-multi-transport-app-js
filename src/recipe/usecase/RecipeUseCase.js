@@ -1,4 +1,5 @@
 const { serviceLocator } = require("@mqnoy/js-sl");
+const AppError = require("../../utils/AppError");
 
 class RecipeUseCase {
   constructor() {
@@ -8,7 +9,10 @@ class RecipeUseCase {
 
   createRecipe = async (data) => {
     if (!data.title || !data.ingredients || !data.instructions) {
-      throw new Error("All fields are required");
+      throw new AppError(
+        "Missing required fields: title, ingredients, or instructions.",
+        400
+      );
     }
     return await this.recipeRepository.createRecipe(data);
   };

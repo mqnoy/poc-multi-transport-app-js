@@ -1,5 +1,4 @@
 const express = require("express");
-const AppError = require("../../../utils/AppError");
 const { serviceLocator } = require("@mqnoy/js-sl");
 const { expressAsyncWrapper } = require("@mqnoy/async-wrapper");
 
@@ -19,16 +18,11 @@ class HttpTransport {
   };
 
   createRecipe = expressAsyncWrapper(async (req, res) => {
-    const { title, ingredients, instructions } = req.body;
-
-    if (!title || !ingredients || !instructions) {
-      throw new AppError(
-        "Missing required fields: title, ingredients, or instructions.",
-        400
-      );
-    }
     const result = await this.recipeUseCase.createRecipe(req.body);
-    res.status(200).json(result);
+    res.status(200).json({
+      status: "success",
+      data: result,
+    });
   });
 
   getRecipes = expressAsyncWrapper(async (req, res, next) => {
@@ -37,6 +31,7 @@ class HttpTransport {
     res.status(200).json({
       status: "success",
       data: recipes,
+      metaData: {},
     });
   });
 }
