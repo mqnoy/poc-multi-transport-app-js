@@ -1,3 +1,4 @@
+const Category = require("../models/Category");
 const Recipe = require("../models/Recipe");
 
 class RecipeRepository {
@@ -6,7 +7,17 @@ class RecipeRepository {
   };
 
   getAllRecipes = () => {
-    return Recipe.findAll();
+    return Recipe.findAll({
+      include: [
+        {
+          model: Category,
+          as: "categories",
+          through: {
+            attributes: [],
+          },
+        },
+      ],
+    });
   };
 }
 
