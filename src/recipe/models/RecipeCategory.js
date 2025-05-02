@@ -1,25 +1,41 @@
-const { Model, DataTypes, Sequelize } = require("sequelize");
+const { DataTypes } = require("sequelize");
+const sequelize = require("../../config/database");
+const Category = require("./Category");
+const Recipe = require("./Recipe");
 
-class RecipeCategory extends Model {
-  /**
-   *
-   * @param {Sequelize} sequelize
-   */
-  static initModel = (sequelize) => {
-    return RecipeCategory.init(
-      {
-        recipe_id: {
-          type: DataTypes.BIGINT,
-          primaryKey: true,
-        },
-        category_id: {
-          type: DataTypes.BIGINT,
-          primaryKey: true,
-        },
-      },
-      { sequelize, modelName: "RecipeCategory", timestamps: false }
-    );
-  };
+const RecipeCategory = sequelize.define(
+  "RecipeCategory",
+  {
+    recipe_id: {
+      type: DataTypes.BIGINT,
+      primaryKey: true,
+    },
+    category_id: {
+      type: DataTypes.BIGINT,
+      primaryKey: true,
+    },
+  },
+  {
+    timestamps: false,
+  }
+);
+
+if (process.env.DB_AUTO_MIGRATE) {
+  RecipeCategory.sync({ alter: true });
 }
+
+Recipe.belongsToMany(Category, {
+  through: RecipeCategory,
+  foreignKey: "recipe_id",
+  as: "categories",
+  otherKey: "category_id",
+});
+
+Category.belongsToMany(Recipe, {
+  through: RecipeCategory,
+  foreignKey: "category_id",
+  as: "recipes",
+  otherKey: "recipe_id",
+});
 
 module.exports = RecipeCategory;
