@@ -1,12 +1,12 @@
-const { DataTypes, Model, Sequelize } = require("sequelize");
+const { Model, DataTypes, Sequelize } = require("sequelize");
 
-class Recipe extends Model {
+class Category extends Model {
   /**
    *
    * @param {Sequelize} sequelize
    */
   static initModel = (sequelize) => {
-    return Recipe.init(
+    return Category.init(
       {
         id: {
           type: DataTypes.BIGINT,
@@ -14,16 +14,8 @@ class Recipe extends Model {
           field: "id",
           autoIncrement: true,
         },
-        title: {
+        name: {
           type: DataTypes.STRING,
-          allowNull: false,
-        },
-        ingredients: {
-          type: DataTypes.TEXT,
-          allowNull: false,
-        },
-        instructions: {
-          type: DataTypes.TEXT,
           allowNull: false,
         },
         createdAt: {
@@ -37,9 +29,9 @@ class Recipe extends Model {
           allowNull: true,
         },
       },
-      { sequelize, modelName: "Recipe", timestamps: false }
+      { sequelize, modelName: "Category", timestamps: false }
     );
   };
 }
 
-module.exports = Recipe;
+module.exports = Category;
