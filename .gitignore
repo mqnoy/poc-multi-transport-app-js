@@ -1,0 +1,28 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# IDEs
+.vscode
+.idea
+
+# Production
+dist/
+
+# Environment
+.DS_Store
+
+# Logging
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temp
+/.tmp/
+
+# Configuration
+.env
+.env.release
