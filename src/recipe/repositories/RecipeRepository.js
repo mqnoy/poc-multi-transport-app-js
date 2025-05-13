@@ -1,5 +1,4 @@
-const Category = require("../models/Category");
-const Recipe = require("../models/Recipe");
+const { Category, Recipe } = require("../models");
 
 class RecipeRepository {
   createRecipe = (data) => {
