@@ -18,7 +18,7 @@
     "@grpc/reflection": "^1.0.4",
     "@mqnoy/async-wrapper": "^0.0.0",
     "@mqnoy/js-sl": "^0.0.0",
-    "@mqnoy/lolog": "^0.0.5",
+    "@mqnoy/lolog": "^0.0.7",
     "body-parser": "^2.2.0",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",

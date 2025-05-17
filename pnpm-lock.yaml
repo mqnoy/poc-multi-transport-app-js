@@ -24,8 +24,8 @@ importers:
         specifier: ^0.0.0
         version: 0.0.0
       '@mqnoy/lolog':
-        specifier: ^0.0.5
-        version: 0.0.5
+        specifier: ^0.0.7
+        version: 0.0.7
       body-parser:
         specifier: ^2.2.0
         version: 2.2.0
@@ -93,8 +93,8 @@ packages:
   '@mqnoy/js-sl@0.0.0':
     resolution: {integrity: sha512-OTEwPuSauq+Oyihgdgaqtw9gdyM1C7W9wAMgbIP+KruOQ2nc8BSK9uWj2dR+60uZFUZVOxl6O17LB0mvNj6qQg==}
 
-  '@mqnoy/lolog@0.0.5':
-    resolution: {integrity: sha512-UyI3s+n+/mdQwAfRGt8qUYx4rePsFgkdwN76dSuG1hfaT/UekLxOEY6RPp3GVjQmukhHmtWLfqZpC2IJHP0G7A==}
+  '@mqnoy/lolog@0.0.7':
+    resolution: {integrity: sha512-1VRrEJLTVQbU/pgrj3ederZrJuW0ohqLEcUTV8lxn57GvKakGflser/8yoHKCTaWdmLC71uXXC04mXp1d2J/AQ==}
 
   '@one-ini/wasm@0.1.1':
     resolution: {integrity: sha512-XuySG1E38YScSJoMlqovLru4KTUNSjgVTIjyh7qMX6aNN5HY5Ct5LhRJdxO79JtTzKfzV/bnWpz+zquYrISsvw==}
@@ -381,6 +381,9 @@ packages:
   finalhandler@2.1.0:
     resolution: {integrity: sha512-/t88Ty3d5JWQbWYgaOGCCYfXRwV1+be02WqYYlL6h0lEiUAMPM8o8qKGO01YIkOHzka2up08wvgYD0mDiI+q3Q==}
     engines: {node: '>= 0.8'}
+
+  flatted@3.3.3:
+    resolution: {integrity: sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg==}
 
   fn.name@1.1.0:
     resolution: {integrity: sha512-GRnmB5gPyJpAhTQdSZTSp9uaPSvl09KoYcMQtsB9rQoOmzs9dH6ffeccH+Z+cv6P68Hu5bC6JjRh4Ah/mHSNRw==}
@@ -972,9 +975,10 @@ snapshots:
 
   '@mqnoy/js-sl@0.0.0': {}
 
-  '@mqnoy/lolog@0.0.5':
+  '@mqnoy/lolog@0.0.7':
     dependencies:
       '@elastic/ecs-winston-format': 1.5.3
+      flatted: 3.3.3
       winston: 3.17.0
       winston-transport: 4.9.0
 
@@ -1288,6 +1292,8 @@ snapshots:
       statuses: 2.0.1
     transitivePeerDependencies:
       - supports-color
+
+  flatted@3.3.3: {}
 
   fn.name@1.1.0: {}
 
