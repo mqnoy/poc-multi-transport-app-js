@@ -17,8 +17,8 @@ class HttpTransport {
     return route;
   };
 
-  createRecipe = expressAsyncWrapper(async (req, res) => {
-    const result = await this.recipeUseCase.createRecipe(req.body);
+  createRecipe = expressAsyncWrapper(async (req, res, _next) => {
+    const result = await this.recipeUseCase.createRecipe(req);
     res.status(200).json({
       status: "success",
       data: result,
